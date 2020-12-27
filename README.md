@@ -8,7 +8,20 @@ This example demonstrates the use of cookie session to store user credential
 'authenticated': true
 'username': <username>
 ```
+### Using the AWS EC2 service
+```
+Instance ID
+i-0920aa126a0b2b68e
 
+1.Open an SSH client.
+2.Locate your private key file. The key used to launch this instance is comps381--gp.pem
+3.Run this command, if necessary, to ensure your key is not publicly viewable.
+   chmod 400 comps381--gp.pem
+4.Connect to your instance using its Public DNS:
+   ec2-54-87-44-83.compute-1.amazonaws.com
+Example:
+   ssh -i "comps381--gp.pem" ubuntu@ec2-54-87-44-83.compute-1.amazonaws.com
+```
 ### Installing
 ```
 npm install
