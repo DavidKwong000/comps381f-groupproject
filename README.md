@@ -18,7 +18,7 @@ i-0920aa126a0b2b68e
 3.Run this command, if necessary, to ensure your key is not publicly viewable.
    chmod 400 comps381--gp.pem
 4.Connect to your instance using its Public DNS:
-   ec2-54-87-44-83.compute-1.amazonaws.com
+   ec2-54-87-44-83.compute-1.amazonaws.com:8099
 Example:
    ssh -i "comps381--gp.pem" ubuntu@ec2-54-87-44-83.compute-1.amazonaws.com
 ```
