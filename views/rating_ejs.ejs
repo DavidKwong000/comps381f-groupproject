@@ -1,0 +1,67 @@
+<html>
+    <body>
+        <head><title>Rating</title> 
+            <style>
+                input[type=text], select {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            input[type=submit] {
+                width: 100%;
+                background-color: #4CAF50;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            input[type=submit]:hover {
+                background-color: #45a049;
+            }
+            
+            body {
+                text-align: center;
+            }
+
+            form { display: inline-block; text-align: left; }
+            
+            .center{
+                text-align: center;
+            }
+            </style>
+        </head>
+        <H2 class="center">Rating Document</H2>
+        <div>
+        <form action="/ratingCreate" method="POST" enctype="multipart/form-data">
+            Restaurant Name:
+            <input type="text" name="name" value=<%= restaurants.name %> readonly="true"/><p>
+            ID:
+            <input type="text" name="restaurant_id" value=<%= restaurants.restaurant_id %> readonly="true"/><p>
+            Rating User:
+            <input type="text" name="name" value=<%= name %> readonly="true"/><p>
+        <select class="score" name="score">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+            <input type="submit" value="Rating">
+        </form>
+        </div>
+        <h3 style="text-align:center"><a href=/>Back To Menu</a></h3>
+    </body>
+</html>

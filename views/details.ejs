@@ -1,0 +1,82 @@
+<HTML>
+    <BODY>
+    <head>
+      <title><%= c.name %></title>
+      <style>
+          table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 50%;
+          }
+          table.center {
+            margin-left: auto; 
+            margin-right: auto;
+          }
+  
+          td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+          }
+  
+          tr:nth-child(even) {
+            background-color: #dddddd;
+          }
+          .aligncenter {
+            text-align: center;
+          }
+          .center {
+            text-align: center;
+          }
+          img{
+            height: 50%;
+            width: 50%;
+          }
+      </style>
+    </head>
+    <H2 class="center"><%= c.name %></H2>
+    <% if (c.photo != null) { %>
+        <p class="aligncenter">
+          <img src="data:<%= c.mimetype %>;base64,<%= c.photo %>" >
+        </p>
+    <% } %>
+    <table class="center">
+        <tr>
+          <th>ID:</th>
+          <td><%= c.restaurant_id %></td>      
+        </tr>
+        <tr>
+            <th>Borough:</th>
+            <td><%= c.borough %></td>
+          </tr>
+          <tr>
+            <th>Cuisine:</th>
+            <td><%= c.cusine %></td>
+          </tr>   
+          <tr>
+            <th>Address:</th>
+            <td><ul>         
+            <li>Street: <%= c.address.street %></li>
+            <li>Building: <%= c.address.building %></li>
+            <li>Zipcode: <%= c.address.zipcode %></li>
+            <li>Coord: <%= c.address.coord %></li>
+            </ul></td>
+          </tr>
+          <tr>
+            <th>Grades:</th>
+            <td><ol> 
+            <% c.grades.forEach(function(users) { %>
+                <li>User: <%= users.user %></li>
+                Score: <%= users.score %>
+            <% });                        %>
+            </ol></td>
+          </tr>
+          <tr>
+            <th>Owner:</th>
+            <td><%= c.owner %></td>
+          </tr>
+        </table>
+        <h3 style="text-align:center"><a href='/'>Back To Menu</a></h3>
+    </BODY>
+    </HTML>
+    
